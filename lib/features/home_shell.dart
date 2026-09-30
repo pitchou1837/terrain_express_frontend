@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:terrain_express/widgets/placeholder_screen.dart';
 import 'package:terrain_express/features/pitches/pitch_list_screen.dart';
+import 'package:terrain_express/features/bookings/my_bookings_screen.dart';
 
 /// Bottom navigation for PLAYERS
 class PlayerShell extends StatefulWidget {
@@ -14,10 +15,10 @@ class _PlayerShellState extends State<PlayerShell> {
   int _index = 0;
 
   final _screens = const [
-    PitchListScreen(),                                                   // Amine ✅
-    PlaceholderScreen(title: 'Matches', icon: Icons.groups),             // Akram
-    PlaceholderScreen(title: 'My bookings', icon: Icons.calendar_month), // Amine
-    PlaceholderScreen(title: 'Profile', icon: Icons.person),             // Akram
+    PitchListScreen(),                                       // Amine ✅
+    PlaceholderScreen(title: 'Matches', icon: Icons.groups), // Akram
+    MyBookingsScreen(),                                      // Amine ✅
+    PlaceholderScreen(title: 'Profile', icon: Icons.person), // Akram
   ];
 
   @override

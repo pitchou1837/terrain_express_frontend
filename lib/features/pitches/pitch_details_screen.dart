@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:terrain_express/core/theme.dart';
 import 'package:terrain_express/data/repositories/pitch_repository.dart';
 import 'package:terrain_express/models/pitch.dart';
+import 'package:terrain_express/features/bookings/book_slot_screen.dart';
 
 class PitchDetailsScreen extends StatefulWidget {
   final int pitchId;
@@ -84,12 +85,11 @@ class _PitchDetailsScreenState extends State<PitchDetailsScreen> {
             child: ElevatedButton.icon(
               icon: const Icon(Icons.calendar_month),
               label: const Text('See available slots'),
-              onPressed: () {
-                // TODO: open the booking screen (next part)
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Booking coming next!')),
-                );
-              },
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => BookSlotScreen(pitch: pitch)),
+              ),
             ),
           ),
         ),
